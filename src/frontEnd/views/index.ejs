@@ -1,0 +1,34 @@
+<h2 class=" text-center text-3xl font-semibold mt-5">Welcome to Chat Application</h2>
+
+
+<section class="  flex  flex-wrap gap-5 justify-center my-6">
+  
+ <% if(posts){ %>
+   <% posts.forEach((post)=>{ %>
+    <div class=" shadow-lg  border border-pink-600 rounded-xl p-4">
+        <input hidden type="number" name="id" value="<%=post.id%>" id="id">
+      <%  if(userId==post.userId){ %>
+
+        <a href="/updatepost?id=<%=post.id%>&caption=<%=post.caption%>" class=" border rounded-full mx-2 p-2 flex items-center justify-center text-lg border-orange-500 hover:bg-orange-400"><ion-icon class="text-xl" name="create-outline"></ion-icon></a>
+        <%}%>
+        <div class=" h-[270px] w-[300px] rounded-sm mt-2">
+            <img class=" w-full h-full object-cover" src="images/<%=post.imageUrl%>" alt="">
+        </div>
+        <h3 class=" text-center text-lg font-semibold mt-3"> <%= post.caption%></h3>
+        <div class=" flex items-center justify-around  mt-2">
+            <button  class=" border rounded-full px-3 py-1 text-lg border-blue-500 hover:bg-blue-400 ">like </button> 
+            <button onclick="toggleCommentForm(this)"  class=" border rounded-full px-3 py-1 text-lg border-red-500  cursor-pointer hover:bg-red-400">comment</button>
+        </div>
+        <!-- take comment from the user -->
+         <form id="commenForm"  class="hidden  flex-col items-start justify-center">
+            <input class=" px-2 py-1 text-lg outline-none border-b border-gray-600 my-2" type="text" name="comment" id="comment" placeholder="Enter your comment ...">
+            <button class=" border px-2 py-1 border-red-500 ml-3 rounded-md text-lg  hover:bg-red-400">post</button>
+         </form>
+         
+    </div>
+ <%  }) %>
+ <% }else{ %>
+<h1>No post exist</h1>
+ <%}%>
+   
+</section>

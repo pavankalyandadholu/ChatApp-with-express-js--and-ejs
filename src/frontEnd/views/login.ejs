@@ -1,0 +1,27 @@
+<section class=" min-h-[94vh] p-3 relative flex  items-center justify-center   "> 
+
+<div id="recruiterLoginform" class="    p-3 m-3 absolute w-full sm:w-4/5 max-w-[500px] mx-auto   bg-gray-400 left-0 right-0  ">
+    <div class="  p-3 mb-8">
+        <h1 class=" text-center text-2xl">
+            LOGIN
+        </h1>
+        <% if(isregistered){ %>
+            <p class=" text-center">Register Succesfully !</p>
+       <% } %>
+        
+    </div>
+<form action="/login" method="post" class="p-3  mx-auto text-center mb-8  ">
+   
+             <div class=" rounded-md   bg-slate-200 w-[270px] flex items-center justify-center  mx-auto mb-3 pl-2">
+       <label class=" px-2 h-8" for="email">Email</label>
+     <input required class=" pl-1  rounded-r-md grow border-none outline-none h-8" placeholder="Enter your email" type="email" name="email" value="king1@gmail.com" id="email">
+             </div>
+             <div class=" rounded-md   bg-slate-200 w-[270px] flex items-center justify-center  mx-auto mb-3 pl-2">
+       <label class=" px-2 h-8" for="password">Password</label>
+     <input required class=" pl-1  rounded-r-md grow border-none outline-none h-8" placeholder="Enter your password" type="password" value="12341" name="password" id="password">
+             </div>
+             <button type="submit" class="px-2 py-1 rounded-md text-lg bg-rose-700 hover:bg-rose-800 text-white mt-3   ">Login</button>
+</form>
+ 
+</div>
+</section>

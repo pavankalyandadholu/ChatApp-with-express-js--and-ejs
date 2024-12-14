@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Chat App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+     <nav class=" bg-gray-400 h-16 w-full flex items-center text-lg mb-6 ">
+       <a href="/" class=" ml-5"> <h2>Chat App</h2></a>
+       <ul class=" mx-auto flex items-center gap-5">
+        <li class=" px-2"><a href="/login">Login</a></li>
+        <li class=" px-2"><a href="/register">Register</a></li>
+        <li class=" px-2"><a href="/myposts">My Posts</a></li>
+        <li class=" px-2"><a href="/allposts">All Posts</a></li>
+        <li class=" px-2"><a href="/addpost">Add Post</a></li>
+        <li class=" px-2"><a href="/updatepost">Update Post</a></li>
+        <li class=" px-2"><a href="/logout">Logout</a></li>
+        
+       </ul>
+     </nav>
+<%- body %>
+
+ <script >
+  function toggleCommentForm(e){
+    e.preventDefault()
+    const parent=e.parentElement.parentElement;
+    const formEl=parent.querySelector('form')
+    formEl.classList.toggle('flex');
+    formEl.classList.toggle('hidden');
+
+}
+ </script>
+ 
+</body>
+</html>
+
+
